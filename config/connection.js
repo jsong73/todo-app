@@ -1,13 +1,16 @@
 //importing sequelize library
 const Sequelize = require("sequelize")
+//to access the files from the .env file
+require("dotenv").config();
 
 //the new keyword creates an OBJECT from a CLASS (class = sequelize)
 //creating the Sequelize class - class contain two parameters that are both objects
 //first parameter is the database login info and second parameter is database port info
 const sequelize = new Sequelize(
-"todo_db",
-"root",
-"Pocosong311",
+//path to the .env file so that info is hidden in .env file
+process.env.DB_NAME,
+process.env.DB_USER,
+process.env.DB_PW,
 {
     host: "localhost",
     dialect: "mysql",
@@ -16,4 +19,4 @@ const sequelize = new Sequelize(
 }
 );
 //exporting all the objects in the variable sequelize
-module.export = sequelize;
+module.exports = sequelize;
