@@ -1,5 +1,5 @@
 //object destructuring 
-const { Model, Datatypes, DataTypes } = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 //class is child and model is parent
